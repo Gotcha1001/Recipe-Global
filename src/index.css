@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Recipes.css */
+@keyframes tilt {
+  0%,
+  100% {
+    transform: scale(1.1) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-3deg);
+  }
+}
+
+@keyframes flashBackground {
+  0%,
+  100% {
+    background-color: black;
+  }
+  30% {
+    background-color: red;
+  }
+}
+
+.zoom {
+  transition: transform 0.4s ease; /* Smooth transition */
+}
+
+.zoom:hover {
+  animation: tilt 0.6s infinite alternate ease-in-out; /* Apply the tilt animation */
+  border-radius: 0.5rem; /* Ensure border-radius is applied during animation */
+}
+
+.flash-bg {
+  transition: background-color 0.6s ease; /* Smooth transition */
+}
+
+.flash-bg:hover {
+  animation: flashBackground 9s infinite alternate,
+    tilt 12s infinite alternate ease-in-out; /* Apply both animations */
+}
+
+#quiz {
+  max-width: 50rem;
+  margin: auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #290101 0%, #f0efef 100%);
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px 8px rgba(12, 5, 32, 0.6);
+  text-align: center;
+}
+
+/* CSS for smaller text size and smaller width */
+@media (min-width: 768px) {
+  .md\:text-sm {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* CSS for centering the element and limiting its width */
+.lg\:w-3\/4 {
+  width: 75%; /* 75% of the parent's width */
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Gradient background */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, #ff0000, #000000);
+}
